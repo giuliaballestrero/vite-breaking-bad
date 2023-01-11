@@ -25,7 +25,7 @@ export default {
     </div>
     
     <div class="container">
-      <div>
+      <div class="card-wrapper">
         <!--Qui andranno le card-->
         <CardComponent v-for="cardElement in store.cardList" 
         :card="cardElement"/>
@@ -43,7 +43,7 @@ export default {
 @use '../styles/partials/_variables.scss' as *;
 .main-wrapper {
   background-color: $main-bg-color;
-  height: 1200px;
+  height: calc(100% - 300px);
 }
 
 .menu-btn {
@@ -53,8 +53,13 @@ export default {
 
 .container {
   background-color: white;
-  height: 900px;
   width: 80%;
   margin: auto;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 </style>

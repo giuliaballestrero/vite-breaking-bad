@@ -32,6 +32,9 @@ export default {
     width: calc(100% / 5 - 4rem);
     margin: 2rem;
     background-color: $main-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     img {
         width: 100%;

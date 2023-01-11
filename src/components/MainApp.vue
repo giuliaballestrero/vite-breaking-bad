@@ -25,8 +25,13 @@ export default {
     </div>
     
     <div class="container">
+      <div class="card-finder">
+          <h2>Found {{ store.cardList.length }} cards</h2>
+      </div>
+
       <div class="card-wrapper">
         <!--Qui andranno le card-->
+      
         <CardComponent v-for="cardElement in store.cardList" 
         :card="cardElement"/>
 
@@ -55,6 +60,17 @@ export default {
   background-color: white;
   width: 80%;
   margin: auto;
+}
+
+.card-finder {
+  background-color: $secondary-bg-color;
+  padding: 2rem 0;
+  color: white;
+  border: 20px solid white;
+
+    h2 {
+      padding-left: 4rem;
+    }
 }
 
 .card-wrapper {

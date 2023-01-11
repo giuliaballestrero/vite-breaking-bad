@@ -13,7 +13,7 @@ export default {
 <template>
   <section class="header-container">
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg" alt="yu-gi-oh logo">
-    <h1>Yu-Gi-Uh Api</h1>
+    <h1>Yu-Gi-Oh Api</h1>
   </section>
 </template>
 

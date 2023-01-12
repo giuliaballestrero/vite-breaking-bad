@@ -22,9 +22,9 @@ export default {
   <section class="main-wrapper">
 
     <div class="menu-btn">     <!--Qui andrà il menu a tendina... ma non è questo il giorno!-->
-      <select name="card" id="select-card" @input="$emit('searchArchetype')">
+      <select name="card" id="select-card">
           <option :value="null">Select a...</option>
-          <option  v-for="option in options" :value="option"> {{ option }} </option>
+          <option  v-for="option in options" :value="option"  @click="$emit('searchArchetype', option)"> {{ option }} </option>
       </select>
     </div>
     

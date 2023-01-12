@@ -11,6 +11,7 @@ export default {
   data () {
     return {
       store,
+      options: ['Alien', 'Laval', 'Vylon', 'Inzektor', 'Umi', 'Gusto']
     }
   },
 }
@@ -20,8 +21,11 @@ export default {
 <template>
   <section class="main-wrapper">
 
-    <div class="menu-btn">
-      <!--Qui andrà il menu a tendina... ma non è questo il giorno!-->
+    <div class="menu-btn">     <!--Qui andrà il menu a tendina... ma non è questo il giorno!-->
+      <select name="card" id="select-card" @input="$emit('searchArchetype')">
+          <option :value="null">Select a...</option>
+          <option  v-for="option in options" :value="option"> {{ option }} </option>
+      </select>
     </div>
     
     <div class="container">
@@ -48,12 +52,21 @@ export default {
 @use '../styles/partials/_variables.scss' as *;
 .main-wrapper {
   background-color: $main-bg-color;
-  height: calc(100% - 300px);
+  height: calc(100% - 150px);
 }
 
 .menu-btn {
-  height: 150px;
   background-color: $main-bg-color;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 18rem;
+  
+
+    #select-card {
+      padding: .5rem 4rem;
+      background-color: white;
+      font-size: 1.8rem;
+    }
 }
 
 .container {

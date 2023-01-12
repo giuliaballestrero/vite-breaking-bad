@@ -18,13 +18,17 @@ export default {
 
   methods: {
     getCards () {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0', {
+        params: {
+        
+        }
+      })
+
 
       .then((response) => {
         console.log(response.data.data);
         this.store.cardList = response.data.data;
-    })
-      
+    })   
     }
   },
 
@@ -36,7 +40,8 @@ export default {
 </script>
 
 <template>
-  <HeaderApp />
+  <HeaderApp
+    @searchArchetype="getCards(archetype)" />
   <MainApp />
 </template>
 

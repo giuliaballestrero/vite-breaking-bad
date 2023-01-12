@@ -17,11 +17,11 @@ export default {
   },
 
   methods: {
-    getCards (ricerca) {
-      console.log(ricerca)
+    getCards (archetype) {
+      console.log(archetype);
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0', {
         params: {
-          
+          archetype: archetype
         }
       })
 
